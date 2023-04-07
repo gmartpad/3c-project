@@ -20,7 +20,7 @@ export default function Home() {
           </li>
         </ul>
         <div>
-          <p>favoritesState: {JSON.stringify(favoritesState)}</p>
+          <p data-testid="favoritesState">favoritesState: {JSON.stringify(favoritesState)}</p>
         </div>
         <Routes>
           <Route path="/list" element={<h1>List</h1>} />
