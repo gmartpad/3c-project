@@ -5,15 +5,15 @@ import { store } from '@store/store'
 import { Provider } from 'react-redux'
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('renders a paragraph showing the favoritesState redux value', () => {
     render(
       <Provider store={store}>
         <Home />
       </Provider>
     )
 
-    const heading = screen.getByTestId("favoritesState")
+    const favoritesStateParagraph = screen.getByTestId("favoritesState")
 
-    expect(heading).toBeInTheDocument()
+    expect(favoritesStateParagraph).toBeInTheDocument()
   })
 })
