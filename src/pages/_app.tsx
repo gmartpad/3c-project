@@ -1,7 +1,7 @@
 import '@styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
-import { Provider } from "react-redux"
+import { Provider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { wrapper } from '@store/store'
 
@@ -15,7 +15,7 @@ function App({ Component, ...rest }: AppProps) {
     setRender(true)
   }, [])
 
-  if(!render) return null
+  if (!render) return null
 
   return (
     <Provider store={store}>

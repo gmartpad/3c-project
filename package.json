@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignote-path .gitignore .",
     "start": "next start",
     "lint": "next lint"
   },
@@ -26,5 +28,8 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
     "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7"
   }
 }

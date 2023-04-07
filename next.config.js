@@ -5,8 +5,8 @@ const nextConfig = {
     return [
       {
         source: '/:any*',
-        destination: '/'
-      }
+        destination: '/',
+      },
     ]
   },
 }

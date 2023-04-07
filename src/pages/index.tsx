@@ -1,12 +1,11 @@
 import { Inter } from 'next/font/google'
 import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { selectFavoritesState } from '@store/favoritesSlice'
-import { useSelector } from "react-redux"
+import { useSelector } from 'react-redux'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
   const favoritesState = useSelector(selectFavoritesState)
 
   return (
