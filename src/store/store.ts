@@ -1,17 +1,17 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
-import { favoritesSlice } from "./favoritesSlice"
-import { createWrapper } from "next-redux-wrapper"
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import { favoritesSlice } from './favoritesSlice'
+import { createWrapper } from 'next-redux-wrapper'
 
 const makeStore = () =>
   configureStore({
     reducer: {
-      [favoritesSlice.name]: favoritesSlice.reducer
+      [favoritesSlice.name]: favoritesSlice.reducer,
     },
-    devTools: true
+    devTools: true,
   })
 
 export type AppStore = ReturnType<typeof makeStore>
-export type AppState = ReturnType<AppStore["getState"]>
+export type AppState = ReturnType<AppStore['getState']>
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   AppState,
