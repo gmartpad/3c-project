@@ -8,7 +8,8 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignote-path .gitignore .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "prettier --write --ignote-path .gitignore . && next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
