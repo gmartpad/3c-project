@@ -1,9 +1,13 @@
-import '@/styles/globals.css'
+import '@styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { Provider } from "react-redux"
+import { ChakraProvider } from '@chakra-ui/react'
+import { wrapper } from '@store/store'
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, ...rest }: AppProps) {
+  const { store, props } = wrapper.useWrappedStore(rest)
+  const { pageProps } = props
 
   const [render, setRender] = useState<boolean>(false)
 
@@ -14,8 +18,12 @@ export default function App({ Component, pageProps }: AppProps) {
   if(!render) return null
 
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </Provider>
   )
 }
+
+export default App
