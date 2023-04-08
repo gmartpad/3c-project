@@ -16,8 +16,9 @@
     "incremental": true,
     "paths": {
       "@pages/*": ["./src/pages/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@store/*": ["./src/store/*"]
+      "@screens/*": ["./src/screens/*"],
+      "@store/*": ["./src/store/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
