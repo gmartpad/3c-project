@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { AppState } from './store'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { store } from './store'
 import { HYDRATE } from 'next-redux-wrapper'
 
 // Type for our state
@@ -18,7 +18,7 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     // Action to set the authentication status
-    setFavoritesState(state, action) {
+    setFavoritesState(state: FavoritesState, action: PayloadAction<Array<any>>) {
       state.favoritesState = action.payload
     },
   },
@@ -36,7 +36,9 @@ export const favoritesSlice = createSlice({
 
 export const { setFavoritesState } = favoritesSlice.actions
 
-export const selectFavoritesState = (state: AppState) =>
+export type RootState = ReturnType<typeof store.getState>
+
+export const selectFavoritesState = (state: RootState) =>
   state.favorites.favoritesState
 
 export default favoritesSlice.reducer
