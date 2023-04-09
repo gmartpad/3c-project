@@ -5,25 +5,27 @@ import { useSearchParams } from 'react-router-dom'
 
 interface PaginationButtonsProps {
   handleGetPokemon: (baseUrl?: string) => void
-  pokemonPrevious: string | null
-  pokemonNext: string | null
+  pokemonPrevious?: string | null
+  pokemonNext?: string | null
+  searchParamName: string
 }
 
 function PaginationButtons({
   handleGetPokemon,
   pokemonPrevious,
   pokemonNext,
+  searchParamName,
 }: PaginationButtonsProps) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   return (
-    <Stack marginY={8} direction="row" spacing={4}>
+    <Stack justifyContent="center" marginY={8} direction="row" spacing={4}>
       {!!pokemonPrevious && (
         <Button
           onClick={async () => {
             searchParams.set(
-              'page',
-              String(Number(searchParams.get('page') ?? 0) - 1),
+              searchParamName,
+              String(Number(searchParams.get(searchParamName) ?? 0) - 1),
             )
             setSearchParams(searchParams)
             await handleGetPokemon(pokemonPrevious)
@@ -32,15 +34,15 @@ function PaginationButtons({
           colorScheme="black"
           variant="outline"
         >
-          Previous Page
+          Página Anterior
         </Button>
       )}
       {!!pokemonNext && (
         <Button
           onClick={async () => {
             searchParams.set(
-              'page',
-              String(Number(searchParams.get('page') ?? 0) + 1),
+              searchParamName,
+              String(Number(searchParams.get(searchParamName) ?? 0) + 1),
             )
             setSearchParams(searchParams)
             await handleGetPokemon(pokemonNext)
@@ -49,7 +51,7 @@ function PaginationButtons({
           colorScheme="black"
           variant="outline"
         >
-          Next Page
+          Próxima Página
         </Button>
       )}
     </Stack>

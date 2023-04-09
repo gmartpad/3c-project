@@ -26,7 +26,7 @@ const SidebarContent = ({ onClick }: { onClick: () => void }) => {
       path: '/',
     },
     {
-      pageTitle: 'List',
+      pageTitle: 'Lista',
       path: '/list',
     },
   ]
@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen, variant, onClose }: Props) => {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>My Favorite Pokémon</DrawerHeader>
+          <DrawerHeader>Meus Pokémons Favoritos</DrawerHeader>
           <DrawerBody>
             <SidebarContent onClick={onClose} />
           </DrawerBody>

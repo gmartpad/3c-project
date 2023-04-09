@@ -71,7 +71,7 @@ function FilledPokemonCard({
           <Stack>
             <Heading>{capitalizeString(pokemonDetails?.name)}</Heading>
             <Text>
-              Types:{' '}
+              Tipos:{' '}
               {pokemonDetails?.types
                 .map((type: any) => capitalizeString(type?.type?.name))
                 ?.join(', ')}
@@ -86,7 +86,7 @@ function FilledPokemonCard({
               backgroundColor="#3c5aa6"
               color="#fff"
             >
-              See More
+              <Text>Ver mais</Text>
             </Button>
             <Button
               onClick={() => toggleFavoritePokemon(pokemonDetails)}
@@ -135,34 +135,42 @@ function FilledPokemonCard({
               flexDirection="column"
               justifyContent="center"
             >
-              <p>
-                Base XP: {JSON.stringify(pokemonDetails?.base_experience)}xp
-              </p>
-              <p>
-                Types:{' '}
+              <Text>
+                XP Base: {JSON.stringify(pokemonDetails?.base_experience)}xp
+              </Text>
+              <Text>
+                Tipos:{' '}
                 {pokemonDetails?.types
                   .map((type: any) => capitalizeString(type?.type?.name))
                   ?.join(', ')}
-              </p>
-              <b>Stats</b>
+              </Text>
+              <b>Estatísticas</b>
               {(pokemonDetails?.stats ?? [])?.map((stat: any, k: React.Key) => (
-                <p key={k}>
+                <Text key={k}>
                   {capitalizeEveryWordOfString(stat?.stat?.name)}:{' '}
                   {stat?.base_stat}
-                </p>
+                </Text>
               ))}
-              <b>Height</b>
-              <p>In decimeters: {JSON.stringify(pokemonDetails?.height)}dm </p>
-              <p>
-                In centimeters: {JSON.stringify(pokemonDetails?.height * 10)}cm{' '}
-              </p>
-              <p>In meters: {JSON.stringify(pokemonDetails?.height / 10)}m</p>
-              <b>Weight</b>
-              <p>In Hectograms: {JSON.stringify(pokemonDetails?.weight)}hg</p>
-              <p>In Grams: {JSON.stringify(pokemonDetails?.weight * 100)}g</p>
-              <p>
-                In Kilograms: {JSON.stringify(pokemonDetails?.weight / 10)}kg
-              </p>
+              <Text fontWeight="bold">Altura</Text>
+              <Text>
+                Em decímetros: {JSON.stringify(pokemonDetails?.height)}dm{' '}
+              </Text>
+              <Text>
+                Em centímetros: {JSON.stringify(pokemonDetails?.height * 10)}cm{' '}
+              </Text>
+              <Text>
+                Em metros: {JSON.stringify(pokemonDetails?.height / 10)}m
+              </Text>
+              <Text fontWeight="bold">Peso</Text>
+              <Text>
+                Em hectogramas: {JSON.stringify(pokemonDetails?.weight)}hg
+              </Text>
+              <Text>
+                Em gramas: {JSON.stringify(pokemonDetails?.weight * 100)}g
+              </Text>
+              <Text>
+                Em kilogramas: {JSON.stringify(pokemonDetails?.weight / 10)}kg
+              </Text>
             </Box>
           </ModalBody>
         </ModalContent>

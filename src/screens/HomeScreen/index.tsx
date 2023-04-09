@@ -24,11 +24,12 @@ function HomeScreen() {
       flexDirection={isBelowMD ? 'column' : 'row'}
     >
       <Heading textAlign={isBelowMD ? 'center' : 'inherit'} as="h1" size="2xl">
-        My Favorite Pokemon
+        Meus Pokémons Favoritos
       </Heading>
       <Box mt={4} display="flex" flexDirection="column" alignItems="center">
         <Text fontSize="xl" mb={4} marginInline="8" textAlign="center">
-          Welcome to My Awesome App! Check out our list of Pokemons below:
+          Bem-vindo ao Meus Pokémons Favoritos! Confira nossa lista de Pokémons
+          abaixo:
         </Text>
         <Link
           to="/list"
@@ -37,7 +38,7 @@ function HomeScreen() {
             textDecorationLine: 'underline',
           }}
         >
-          View Pokemons List
+          Ver a lista de Pokémons
         </Link>
       </Box>
     </Container>
