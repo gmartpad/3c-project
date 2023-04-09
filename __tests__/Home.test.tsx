@@ -9,10 +9,10 @@ describe('Home', () => {
     render(
       <Provider store={store}>
         <Home />
-      </Provider>
+      </Provider>,
     )
 
-    const favoritesStateParagraph = screen.getByTestId("favoritesState")
+    const favoritesStateParagraph = screen.getByTestId('favoritesState')
 
     expect(favoritesStateParagraph).toBeInTheDocument()
   })

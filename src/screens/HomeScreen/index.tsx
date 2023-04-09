@@ -9,7 +9,9 @@ function HomeScreen() {
     <div>
       <h1>Home</h1>
       <div>
-        <p data-testid="favoritesState">favoritesState: {JSON.stringify(favoritesState)}</p>
+        <p data-testid="favoritesState">
+          favoritesState: {JSON.stringify(favoritesState)}
+        </p>
       </div>
     </div>
   )

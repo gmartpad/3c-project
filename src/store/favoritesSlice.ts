@@ -18,7 +18,10 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     // Action to set the authentication status
-    setFavoritesState(state: FavoritesState, action: PayloadAction<Array<any>>) {
+    setFavoritesState(
+      state: FavoritesState,
+      action: PayloadAction<Array<any>>,
+    ) {
       state.favoritesState = action.payload
     },
   },
