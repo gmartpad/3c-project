@@ -24,7 +24,7 @@ function HomeScreen() {
       flexDirection={isBelowMD ? 'column' : 'row'}
     >
       <Heading textAlign={isBelowMD ? 'center' : 'inherit'} as="h1" size="2xl">
-        Meus Pokémons Favoritos
+        Pokémons Favoritos
       </Heading>
       <Box mt={4} display="flex" flexDirection="column" alignItems="center">
         <Text fontSize="xl" mb={4} marginInline="8" textAlign="center">
