@@ -114,9 +114,15 @@ function ListScreen() {
   }, [searchParams, setSearchParams, favoritesState, setFavoritePokemonList])
 
   useEffect(() => {
-    searchParams.set('page', '1')
-    searchParams.set('favoritesPage', '1')
-    setSearchParams(searchParams)
+    setTimeout(() => {
+      if (searchParams.get('page') === null) {
+        searchParams.set('page', '1')
+      }
+      if (searchParams.get('favoritesPage') === null) {
+        searchParams.set('favoritesPage', '1')
+      }
+      setSearchParams(searchParams)
+    }, 200)
   }, [])
 
   useEffect(() => {
