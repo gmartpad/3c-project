@@ -94,15 +94,16 @@ function PokemonCard(props: any) {
             <Button
               onClick={() => setIsModalOpen(true)}
               leftIcon={<BsFillInfoCircleFill />}
-              colorScheme="blue"
+              backgroundColor="#3c5aa6"
+              color="#fff"
             >
               See More
             </Button>
             <Button
               onClick={() => toggleFavoritePokemon(pokemonDetails)}
-              colorScheme="yellow"
               display="flex"
               justifyContent="space-between"
+              backgroundColor="#ffcb05"
             >
               {isFavorite ? <AiFillStar /> : <AiOutlineStar />}
             </Button>
@@ -116,7 +117,7 @@ function PokemonCard(props: any) {
             <Text marginRight="4">{capitalizeString(pokemon?.name)}</Text>
             <Button
               onClick={() => toggleFavoritePokemon(pokemonDetails)}
-              colorScheme="yellow"
+              backgroundColor="#ffcb05"
               display="flex"
               justifyContent="space-between"
               iconSpacing={0}
