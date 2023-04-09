@@ -32,12 +32,8 @@ function SkeletonPokemonCard() {
       <CardBody>
         <Skeleton height="357px" width="100%" />
         <Stack>
-          <Heading>
-            <SkeletonText my="14px" noOfLines={1} width="50%" />
-          </Heading>
-          <Text>
-            <SkeletonText my="14px" noOfLines={1} width="20%" />
-          </Text>
+          <SkeletonText my="14px" noOfLines={1} width="50%" />
+          <SkeletonText my="14px" noOfLines={1} width="20%" />
         </Stack>
       </CardBody>
       <CardFooter>
