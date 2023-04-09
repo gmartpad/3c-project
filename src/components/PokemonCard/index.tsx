@@ -143,8 +143,9 @@ function PokemonCard(props: any) {
               flexDirection="column"
               justifyContent="center"
             >
-              <p>ID: {JSON.stringify(pokemonDetails?.id)}</p>
-              <p>Base XP: {JSON.stringify(pokemonDetails?.base_experience)}</p>
+              <p>
+                Base XP: {JSON.stringify(pokemonDetails?.base_experience)}xp
+              </p>
               <p>
                 Types:{' '}
                 {pokemonDetails?.types

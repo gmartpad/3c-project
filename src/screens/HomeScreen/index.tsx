@@ -1,19 +1,33 @@
-import { selectFavoritesState } from '@store/favoritesSlice'
+import { Box, Container, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function HomeScreen() {
-  const favoritesState = useSelector(selectFavoritesState)
-
   return (
-    <div>
-      <h1>Home</h1>
-      <div>
-        <p data-testid="favoritesState">
-          favoritesState: {JSON.stringify(favoritesState)}
-        </p>
-      </div>
-    </div>
+    <Container
+      minHeight="100vh"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Heading as="h1" size="2xl">
+        My Favorite Pokemon
+      </Heading>
+      <Box display="flex" flexDirection="column" alignItems="center">
+        <Text fontSize="xl" mb={4} marginInline="8" textAlign="center">
+          Welcome to My Awesome App! Check out our list of Pokemons below:
+        </Text>
+        <Link
+          to="/list"
+          color="blue.500"
+          style={{
+            textDecorationLine: 'underline',
+          }}
+        >
+          View Pokemons List
+        </Link>
+      </Box>
+    </Container>
   )
 }
 

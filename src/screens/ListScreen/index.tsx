@@ -2,7 +2,7 @@ import PokemonCard from '@components/PokemonCard'
 import { selectFavoritesState } from '@store/favoritesSlice'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Container, Flex } from '@chakra-ui/react'
+import { Container, Flex, Heading } from '@chakra-ui/react'
 
 function ListScreen() {
   const favoritesState = useSelector(selectFavoritesState)
@@ -23,13 +23,8 @@ function ListScreen() {
   }, [handleGetPokemon])
 
   return (
-    <Container maxW="1056px" boxSizing="border-box" centerContent>
-      <h1>List</h1>
-      <div>
-        <p data-testid="favoritesState">
-          favoritesState: {JSON.stringify(favoritesState)}
-        </p>
-      </div>
+    <Container minW="1056px" boxSizing="border-box" centerContent>
+      <Heading padding="16">Lista</Heading>
       <Flex wrap="wrap" justifyContent="space-around">
         {(pokemonList ?? [])?.map((pokemon, key) => (
           <PokemonCard key={key} pokemon={pokemon} />
