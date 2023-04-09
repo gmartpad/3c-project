@@ -206,7 +206,7 @@ function ListScreen() {
                       <PokemonCard key={key} pokemon={pokemon} />
                     ))
                   ) : (
-                    <Text>No favorite pokemon</Text>
+                    <Text>Você não possui pokémons favoritos</Text>
                   )}
                 </Flex>
                 {favoritesState?.length > 10 && (

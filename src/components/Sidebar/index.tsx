@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen, variant, onClose }: Props) => {
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Meus Pokémons Favoritos</DrawerHeader>
+          <DrawerHeader>Pokémons Favoritos</DrawerHeader>
           <DrawerBody>
             <SidebarContent onClick={onClose} />
           </DrawerBody>

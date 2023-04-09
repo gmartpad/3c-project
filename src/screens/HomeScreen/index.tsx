@@ -28,8 +28,7 @@ function HomeScreen() {
       </Heading>
       <Box mt={4} display="flex" flexDirection="column" alignItems="center">
         <Text fontSize="xl" mb={4} marginInline="8" textAlign="center">
-          Bem-vindo ao Meus Pokémons Favoritos! Confira nossa lista de Pokémons
-          abaixo:
+          Bem-vindo ao Pokémons Favoritos! Confira a lista de Pokémons abaixo:
         </Text>
         <Link
           to="/list"
