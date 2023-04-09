@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { wrapper } from '@store/store'
+import { FavoritesProvider } from '../context/FavoriteContext'
 
 function App({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest)
@@ -19,9 +20,11 @@ function App({ Component, ...rest }: AppProps) {
 
   return (
     <Provider store={store}>
-      <ChakraProvider>
-        <Component {...pageProps} />
-      </ChakraProvider>
+      <FavoritesProvider>
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </FavoritesProvider>
     </Provider>
   )
 }
