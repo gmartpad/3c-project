@@ -35,9 +35,9 @@ npm run build
 ## Rode o projeto
 
 ```bash
-yarn dev
+yarn start
 # or
-npm run dev
+npm run start
 ```
 
 ou acesse o projeto [online](https://3c-project.vercel.app/)
